@@ -6,9 +6,6 @@ import RPi.GPIO as gpio
 import Adafruit_CharLCD as LCD #Adafruit Python Char LCD Library
 gpio.setmode(gpio.BCM)
 lcd = LCD.Adafruit_CharLCD(rs=26, en=19, d4=13, d5=6, d6=5, d7=11, cols=16, lines=2)
-lcd.message("MSD Gurukul\n Welcomes You")
-time.sleep(2)
-lcd.clear()
 lcd.message("GPS Demo")
 time.sleep(2)
 lcd.clear()
