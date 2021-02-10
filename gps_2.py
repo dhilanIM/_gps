@@ -4,11 +4,19 @@ import os, time
 from decimal import *
 delay = 1
 
+FILE_NAME = "data.txt"
+FILE_STAT = os.stat(FILE_NAME)  #Size of the file
+
 #GPIO.setmode(GPIO.BOARD)
 def find(str, ch):
     for i, ltr in enumerate(str):
         if ltr == ch:
             yield i
+def saveData(lat,log)
+    with open("data.txt","w") as d_file:
+        d_file.write("Latitude: " + str(lat) + "Longitude: " + str(lon) + "\n")
+        if file_stats >100000: #Delete data if exceeds 100 Kbytes
+            d_file.truncate()
 
 port = serial.Serial("/dev/ttyAMA0", baudrate=9600, timeout=1)
 cd=1
@@ -40,7 +48,8 @@ try:
         s22=int(lon[0:3])
         s2=s22+s2
         print("Latitude:",s1)
-        print("Longitude:",s2)
+        print("Longitude:",s2)}
+        saveData(s1,s2)
     cd=cd+1
     print(cd)
 except KeyboardInterrupt:
